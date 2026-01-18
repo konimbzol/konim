@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הקבוצה הסודית - דילים חמים וקופונים בלעדיים</title>
 
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+    var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+    ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+    ttq.load('D5MGISJC77U4MKNK4SOG');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -19,13 +29,18 @@
     header {
       position: relative;
       padding: 120px 20px;
+      /* שילוב תמונת הרקע מהדף השני עם שכבת האפלה לטקסט */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=2070');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
     }
 
     h1 {
       font-size: 2.6em;
       margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     p {
@@ -33,6 +48,7 @@
       max-width: 700px;
       margin: 0 auto 30px;
       line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
     .cta-button {
@@ -45,6 +61,8 @@
       border-radius: 50px;
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
     }
 
     .cta-button:hover {
