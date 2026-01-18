@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הקבוצה הסודית - דילים חמים וקופונים בלעדיים</title>
 
-  <!-- TikTok Pixel Code Start -->
   <script>
   !function (w, d, t) {
     w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
@@ -21,11 +20,9 @@
     ttq.page();
   }(window, document, 'ttq');
   </script>
-  <!-- TikTok Pixel Code End -->
-
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       background-color: #0b0b0b;
       color: #fff;
@@ -33,47 +30,68 @@
       direction: rtl;
     }
 
-   header {
-  padding: 120px 20px;
-  background-image: url('data:image/jpeg;base64,photo_2026-01-18_18-35-23.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
+    header {
+      padding: 150px 20px;
+      /* תיקון נתיב התמונה והוספת שכבת הצללה לטקסט קריא */
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                  url('photo_2026-01-18_18-35-23.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* יוצר אפקט גלילה יפה */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       margin-bottom: 15px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 1.4em;
       max-width: 700px;
-      margin: 0 auto 30px;
+      margin: 0 auto 40px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     }
 
     .cta-button {
       background: #25d366;
       color: #fff;
-      padding: 18px 40px;
-      font-size: 1.3em;
+      padding: 20px 50px;
+      font-size: 1.4em;
       font-weight: bold;
       border-radius: 50px;
       text-decoration: none;
       display: inline-block;
+      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      background: #20ba5a;
     }
 
     .testimonials {
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: #111;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #25d366;
     }
 
     .testimonial {
       font-style: italic;
       color: #ccc;
-      font-size: 1.1em;
-      min-height: 50px;
+      font-size: 1.3em;
+      min-height: 60px;
+      transition: opacity 0.5s ease;
     }
   </style>
 </head>
@@ -84,13 +102,13 @@
   <h1>הצטרפו לקבוצה הסודית ותתחילו לחסוך 💸</h1>
   <p>דילים חמים, קופונים בלעדיים והנחות שאף אחד אחר לא יודע עליהן.</p>
   <a class="cta-button" href="https://chat.whatsapp.com/FNGsjjCCYlI2fLGGzOPxiw" target="_blank">
-    להצטרפות לקבוצה
+    להצטרפות לקבוצה בחינם
   </a>
 </header>
 
 <section class="testimonials">
   <h2>מה החברים בקבוצה אומרים</h2>
-  <div class="testimonial" id="testimonial"></div>
+  <div class="testimonial" id="testimonial">טוען המלצות...</div>
 </section>
 
 <script>
@@ -108,12 +126,16 @@ let i = 0;
 const el = document.getElementById("testimonial");
 
 function rotate() {
-  el.textContent = testimonials[i];
-  i = (i + 1) % testimonials.length;
+  el.style.opacity = 0;
+  setTimeout(() => {
+    el.textContent = testimonials[i];
+    el.style.opacity = 1;
+    i = (i + 1) % testimonials.length;
+  }, 500);
 }
 
 rotate();
-setInterval(rotate, 3000);
+setInterval(rotate, 4000);
 </script>
 
 </body>
