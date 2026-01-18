@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הקבוצה הסודית - דילים חמים וקופונים בלעדיים</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0b0b0b;
+      color: #fff;
+      text-align: center;
+      direction: rtl;
+    }
+
+    header {
+      position: relative;
+      padding: 120px 20px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      font-size: 2.6em;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      padding: 18px 40px;
+      font-size: 1.3em;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(37,211,102,0.4);
+    }
+
+    .testimonials {
+      padding: 60px 20px;
+      background: #111;
+    }
+
+    .testimonials h2 {
+      font-size: 1.8em;
+      margin-bottom: 25px;
+    }
+
+    .testimonial {
+      font-style: italic;
+      font-size: 1.1em;
+      color: #ccc;
+      min-height: 60px;
+      transition: opacity 0.5s;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 80px 15px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .cta-button {
+        font-size: 1.1em;
+        padding: 14px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>הצטרפו לקבוצה הסודית ותתחילו לחסוך 💸</h1>
+    <p>דילים חמים, קופונים בלעדיים והנחות שאף אחד אחר לא יודע עליהן.</p>
+    <a href="https://chat.whatsapp.com/LN41MWluqi0KEhIa9zsMy8" class="cta-button" target="_blank">
+      להצטרפות לקבוצה
+    </a>
+  </header>
+
+  <section class="testimonials">
+    <h2>מה החברים בקבוצה אומרים</h2>
+    <div class="testimonial" id="testimonial"></div>
+  </section>
+
+  <script>
+    const testimonials = [
+      "״מצאתי הנחות שלא ראיתי באף מקום אחר!״",
+      "״חסכתי מאות שקלים החודש בזכותכם!״",
+      "״הקבוצה פשוט ממכרת, כל יום דיל חדש״",
+      "״לא האמנתי כמה זה שווה עד שהצטרפתי״",
+      "״הכי טובים שיש, תודה על כל ההטבות!״",
+      "״חוויית קניות אחרת לגמרי״",
+      "״מקבלים הכל ראשון – פשוט תענוג״"
+    ];
+
+    let index = 0;
+    const el = document.getElementById("testimonial");
+
+    function rotateTestimonial() {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.textContent = testimonials[index];
+        el.style.opacity = 1;
+        index = (index + 1) % testimonials.length;
+      }, 500);
+    }
+
+    rotateTestimonial();
+    setInterval(rotateTestimonial, 3000);
+  </script>
+
+</body>
+</html>
