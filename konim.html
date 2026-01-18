@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הקבוצה הסודית - דילים חמים וקופונים בלעדיים</title>
 
+  <!-- TikTok Pixel -->
   <script>
   !function (w, d, t) {
     w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
@@ -32,17 +33,18 @@
     }
 
     header {
-      padding: 150px 20px;
+      min-height: 100vh; /* גובה מלא של המסך */
       background:
         linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
         url("image.jpg");
-      background-size: cover;
+      background-size: cover; /* התמונה מתאימה למכלול */
       background-position: center;
-      background-attachment: fixed;
+      background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 0 20px;
     }
 
     h1 {
@@ -93,6 +95,41 @@
       font-size: 1.3em;
       min-height: 60px;
       transition: opacity 0.5s ease;
+    }
+
+    /* ======== התאמה למסכים קטנים ======== */
+    @media (max-width: 768px) {
+      header {
+        min-height: auto; /* מאפשר גמישות בגובה */
+        padding: 80px 15px;
+        background-size: contain; /* מראה את כל התמונה בלי לחתוך */
+        background-position: center top;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+
+      .cta-button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+      }
+
+      .testimonials {
+        padding: 50px 15px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      .testimonial {
+        font-size: 1.1em;
+      }
     }
   </style>
 </head>
